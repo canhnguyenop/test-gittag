@@ -30,6 +30,7 @@ jobs:
           repository: canhnguyenop/test-gittag
           #ref: v0.0.1 #ok
           ref: main
+          fetch-depth: 0
           # push/commit Personal Access Token.
           token: ${{ secrets.ACTION_TOKEN }} # Change token
       

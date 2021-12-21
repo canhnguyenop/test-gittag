@@ -31,6 +31,7 @@ jobs:
           ls -la
           echo $PWD
           HERA_RELEASE_VERSION=$(head -n 1 VERSION)
+          echo HERA_RELEASE_VERSION=$HERA_RELEASE_VERSION
           VERSION=$(git rev-list -n 1 $HERA_RELEASE_VERSION | cut -c1-8)
           echo VERSION=$VERSION
           echo "::set-output name=version::$VERSION"

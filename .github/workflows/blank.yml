@@ -42,7 +42,7 @@ jobs:
           echo HERA_RELEASE_VERSION=$HERA_RELEASE_VERSION
           git branch -a
           git remote -v
-          VERSION=$(/usr/bin/git rev-list -n 1 $HERA_RELEASE_VERSION | cut -c1-8)
+          VERSION=$(/usr/bin/git rev-list -n 1 -- $HERA_RELEASE_VERSION | cut -c1-8)
           echo VERSION=$VERSION
           echo "::set-output name=version::$VERSION"
 

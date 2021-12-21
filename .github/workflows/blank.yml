@@ -23,7 +23,14 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      #- uses: actions/checkout@v2
+      - name: Checkout app repository
+        uses: actions/checkout@v2
+        with:
+          repository: canhnguyenop/test-gittag
+          ref: main
+          # push/commit Personal Access Token.
+          token: ${{ secrets.ACTION_TOKEN }} # Change token
       
       - name: Get commitID from tag
         id: app-repo

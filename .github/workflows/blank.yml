@@ -32,12 +32,7 @@ jobs:
           echo $PWD
           HERA_RELEASE_VERSION=$(head -n 1 VERSION)
           echo HERA_RELEASE_VERSION=$HERA_RELEASE_VERSION
-          git tag
-          VERSION=$(/usr/bin/git rev-list -n 1 $HERA_RELEASE_VERSION | cut -c1-8)
-          git tag
-          git status
-          git branch -a
-          git log
+          VERSION=$(/usr/bin/git rev-list -n 1 "v1.0.0" | cut -c1-8)
           echo VERSION=$VERSION
           echo "::set-output name=version::$VERSION"
 

@@ -28,7 +28,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: canhnguyenop/test-gittag
-          ref: main
+          ref: v0.0.1
           # push/commit Personal Access Token.
           token: ${{ secrets.ACTION_TOKEN }} # Change token
       
@@ -39,7 +39,7 @@ jobs:
           echo $PWD
           HERA_RELEASE_VERSION=$(head -n 1 VERSION)
           echo HERA_RELEASE_VERSION=$HERA_RELEASE_VERSION
-          VERSION=$(/usr/bin/git rev-list -n 1 "v0.0.1" | cut -c1-8)
+          VERSION=$(/usr/bin/git rev-list -n 1 $HERA_RELEASE_VERSION | cut -c1-8)
           echo VERSION=$VERSION
           echo "::set-output name=version::$VERSION"
 
